@@ -15,6 +15,9 @@ import aicteLogo from '@assets/aicte_logo_1784650128753.png';
 import pictLogo from '@assets/pict_logo_1784650156382.jpg';
 import atalLogo from '@assets/atal_logo_1784650128753.png';
 
+// --- BROCHURE PDF ---
+import brochureUrl from '@assets/ATAL_FDP_Brochure_1784650339136.pdf?url';
+
 
 function Home() {
   const [activeSection, setActiveSection] = useState('about');
@@ -151,9 +154,9 @@ function Home() {
               <a href="https://atalacademy.aicte-india.org/signups" target="_blank" rel="noopener noreferrer" className="bg-[#8B1A1A] hover:bg-[#6e1313] text-white font-bold py-4 px-8 rounded flex items-center justify-center gap-2 transition-all shadow-lg">
                 REGISTER NOW <ExternalLink className="w-5 h-5" />
               </a>
-              <button onClick={() => scrollTo('about')} className="border border-white hover:bg-white hover:text-[#1e3a5f] text-white font-bold py-4 px-8 rounded flex items-center justify-center gap-2 transition-all shadow-lg">
+              <a href={brochureUrl} target="_blank" rel="noopener noreferrer" className="border border-white hover:bg-white hover:text-[#1e3a5f] text-white font-bold py-4 px-8 rounded flex items-center justify-center gap-2 transition-all shadow-lg">
                 VIEW BROCHURE <FileText className="w-5 h-5" />
-              </button>
+              </a>
             </div>
           </div>
           
