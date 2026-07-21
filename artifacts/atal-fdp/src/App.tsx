@@ -228,18 +228,14 @@ function Home() {
           
           {/* Stats Strip */}
           <div className="w-full bg-[#15233d] border-t border-white/10 mt-20 relative z-10">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-white/10 text-sm">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10 text-sm">
               <div className="p-6 sm:p-8 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left">
                 <span className="text-white/60 font-semibold tracking-wider text-xs">DURATION</span>
                 <span className="text-white font-medium">October 5–10, 2026</span>
               </div>
               <div className="p-6 sm:p-8 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left">
-                <span className="text-white/60 font-semibold tracking-wider text-xs">APPLICATION NO.</span>
-                <span className="text-white font-medium">1776000690</span>
-              </div>
-              <div className="p-6 sm:p-8 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left">
                 <span className="text-white/60 font-semibold tracking-wider text-xs">VENUE</span>
-                <span className="text-white font-medium">Dept. AI&DS, PICT Pune</span>
+                <span className="text-white font-medium">PICT Pune</span>
               </div>
               <div className="p-6 sm:p-8 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left">
                 <span className="text-white/60 font-semibold tracking-wider text-xs">REGISTRATION</span>
