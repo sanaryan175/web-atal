@@ -10,43 +10,10 @@ import {
   CheckCircle, Users, User
 } from 'lucide-react';
 
-// --- LOGO COMPONENTS ---
-const AicteLogo = ({ className = "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 shadow-sm rounded-full bg-white p-1" }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="48" fill="white" stroke="#1a2744" strokeWidth="2" />
-    <circle cx="50" cy="50" r="42" fill="none" stroke="#D4870A" strokeWidth="1" strokeDasharray="4 4" />
-    <path d="M50 20 L70 55 L30 55 Z" fill="none" stroke="#1a2744" strokeWidth="3" />
-    <circle cx="50" cy="43" r="10" fill="none" stroke="#8B1A1A" strokeWidth="2" />
-    <circle cx="50" cy="50" r="4" fill="#1a2744" />
-    <path d="M20 50 Q50 80 80 50" fill="none" stroke="#1a2744" strokeWidth="2" />
-    <text x="50" y="82" fontSize="14" fontWeight="bold" fill="#1a2744" textAnchor="middle" fontFamily="sans-serif">AICTE</text>
-  </svg>
-);
-
-const PictLogo = ({ className = "w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 shadow-sm rounded-full bg-white p-1" }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="48" fill="white" stroke="#1a2744" strokeWidth="3" />
-    <circle cx="50" cy="50" r="42" fill="none" stroke="#1a2744" strokeWidth="1" />
-    <path d="M20 50 Q50 20 80 50 Q50 80 20 50" fill="#1e3a5f" />
-    <circle cx="50" cy="50" r="15" fill="white" />
-    <path d="M38 50 L62 50 M50 38 L50 62" stroke="#8B1A1A" strokeWidth="4" />
-    <path d="M12 50 A38 38 0 0 1 88 50" fill="none" stroke="#1a2744" strokeWidth="8" strokeDasharray="2 6" />
-    <text x="50" y="24" fontSize="10" fontWeight="bold" fill="#1a2744" textAnchor="middle" fontFamily="sans-serif">SCTR'S</text>
-    <text x="50" y="85" fontSize="16" fontWeight="bold" fill="#1a2744" textAnchor="middle" fontFamily="sans-serif">PICT</text>
-  </svg>
-);
-
-const AtalLogo = ({ className = "w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 shadow-sm rounded-full bg-white p-1" }: { className?: string }) => (
-  <svg viewBox="0 0 100 100" className={className} xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="48" fill="white" stroke="#1a2744" strokeWidth="2" />
-    <path d="M25 65 L50 35 L75 65 Z" fill="#D4870A" />
-    <path d="M35 65 L50 45 L65 65 Z" fill="#8B1A1A" />
-    <rect x="42" y="65" width="16" height="12" fill="#1a2744" />
-    <path d="M20 35 Q50 10 80 35" fill="none" stroke="#1a2744" strokeWidth="3" />
-    <path d="M50 10 L50 25" stroke="#D4870A" strokeWidth="4" />
-    <text x="50" y="90" fontSize="14" fontWeight="bold" fill="#1a2744" textAnchor="middle" fontFamily="sans-serif">ATAL</text>
-  </svg>
-);
+// --- LOGO IMPORTS ---
+import aicteLogo from '@assets/aicte_logo_1784650128753.png';
+import pictLogo from '@assets/pict_logo_1784650156382.jpg';
+import atalLogo from '@assets/atal_logo_1784650128753.png';
 
 
 function Home() {
@@ -111,9 +78,9 @@ function Home() {
       <header className="bg-white py-8 px-4 md:px-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <div className="flex justify-center items-center gap-6 sm:gap-12 md:gap-20 mb-8 w-full px-4">
-            <AicteLogo />
-            <PictLogo />
-            <AtalLogo />
+            <img src={aicteLogo} alt="AICTE Logo" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" />
+            <img src={pictLogo} alt="PICT Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain" />
+            <img src={atalLogo} alt="ATAL Logo" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" />
           </div>
           
           <div className="text-center max-w-4xl">
@@ -563,7 +530,7 @@ function Home() {
       <footer className="bg-[#15233d] text-white py-12 px-4 md:px-8 border-t border-blue-900">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-6">
-            <PictLogo className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-white p-1" />
+            <img src={pictLogo} alt="PICT Logo" className="w-14 h-14 md:w-16 md:h-16 object-contain" />
             <div>
               <h4 className="font-bold text-lg md:text-xl font-serif">Pune Institute of Computer Technology</h4>
               <p className="text-gray-400 text-sm mt-1">Department of Artificial Intelligence & Data Science</p>
