@@ -16,7 +16,7 @@ import pictLogo from '@assets/pict_logo_1784650156382.jpg';
 import atalLogo from '@assets/atal_logo_1784650128753.png';
 
 // --- BROCHURE PDF ---
-import brochureUrl from '@assets/ATAL_FDP_Brochure_1784650339136.pdf?url';
+import brochureUrl from '@assets/ATAL_FDP_Brochure_1784650732622.pdf?url';
 
 
 function Home() {
@@ -157,8 +157,11 @@ function Home() {
             <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-[#1a2744] leading-tight mb-2">
               Pune Institute of Computer Technology
             </h1>
-            <p className="text-xs sm:text-sm text-gray-600 mb-8 font-medium">
+            <p className="text-xs sm:text-sm text-gray-600 mb-1 font-medium">
               (An Autonomous Institute Affiliated to Savitribai Phule Pune University)
+            </p>
+            <p className="text-xs sm:text-sm text-gray-500 mb-8">
+              Approved by AICTE Government of Maharashtra &nbsp;|&nbsp; Accredited by NAAC (A+) &amp; NBA [All eligible UG Programs]
             </p>
             
             <p className="text-gray-500 font-bold uppercase tracking-widest text-xs sm:text-sm mb-2">
