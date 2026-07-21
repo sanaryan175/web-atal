@@ -66,12 +66,78 @@ function Home() {
   ];
 
   const scheduleData = [
-    { day: 'Day 1', date: 'Oct 5, 2026', title: 'Introduction to Applied AI & Generative AI Fundamentals' },
-    { day: 'Day 2', date: 'Oct 6, 2026', title: 'Computer Vision — Concepts, Tools & Applications' },
-    { day: 'Day 3', date: 'Oct 7, 2026', title: 'Data Science Pipelines & Predictive Modeling' },
-    { day: 'Day 4', date: 'Oct 8, 2026', title: 'Large Language Models & Agentic AI Systems' },
-    { day: 'Day 5', date: 'Oct 9, 2026', title: 'Real-World AI Applications (Healthcare, Education, Agriculture, Smart Cities)' },
-    { day: 'Day 6', date: 'Oct 10, 2026', title: 'Responsible AI, Ethics, Capstone Project & Certification Exam' },
+    {
+      day: 'Day 1',
+      date: 'Oct 5, 2026',
+      title: 'Introduction to Applied AI & Generative AI Fundamentals',
+      description: 'Kickoff session covering the current AI landscape and the rise of Generative AI — from foundational concepts to hands-on exploration of modern tools.',
+      topics: [
+        'Overview of the AI/ML ecosystem and emerging trends',
+        'Generative AI concepts: architectures, capabilities, and limitations',
+        'Prompt engineering basics — crafting effective instructions',
+        'Hands-on: ChatGPT, Google Gemini, and GitHub Copilot',
+      ],
+    },
+    {
+      day: 'Day 2',
+      date: 'Oct 6, 2026',
+      title: 'Computer Vision — Concepts, Tools & Applications',
+      description: 'Deep dive into Computer Vision from pixel-level image processing to deploying real-world object detection and recognition systems.',
+      topics: [
+        'Image processing fundamentals with OpenCV',
+        'Convolutional Neural Networks (CNNs) and transfer learning',
+        'Object detection with YOLO — hands-on lab',
+        'Real-world CV applications: medical imaging, surveillance, agriculture',
+      ],
+    },
+    {
+      day: 'Day 3',
+      date: 'Oct 7, 2026',
+      title: 'Data Science Pipelines & Predictive Modeling',
+      description: 'End-to-end data science workflow — from raw data to production-ready predictive models using industry-standard frameworks.',
+      topics: [
+        'Data preprocessing, cleaning, and feature engineering',
+        'Supervised and unsupervised ML algorithms',
+        'Model building with Scikit-learn, Pandas, and Matplotlib',
+        'Model evaluation, validation, and performance metrics',
+      ],
+    },
+    {
+      day: 'Day 4',
+      date: 'Oct 8, 2026',
+      title: 'Large Language Models & Agentic AI Systems',
+      description: 'Explore the architecture behind LLMs and build AI agents capable of reasoning, planning, and using external tools autonomously.',
+      topics: [
+        'LLM architecture: transformers, attention, and fine-tuning',
+        'Retrieval-Augmented Generation (RAG) systems',
+        'Building AI agents with LangChain and tool-use frameworks',
+        'Agentic workflows: multi-step reasoning and automation',
+      ],
+    },
+    {
+      day: 'Day 5',
+      date: 'Oct 9, 2026',
+      title: 'Real-World AI Applications',
+      description: 'Bridging theory and practice — hands-on case studies showing how AI is transforming healthcare, education, agriculture, and smart city infrastructure.',
+      topics: [
+        'AI in Healthcare: diagnostics, medical imaging, drug discovery',
+        'AI in Education: adaptive learning systems and intelligent tutoring',
+        'AI in Agriculture: crop monitoring, yield prediction, pest detection',
+        'Smart Cities: traffic optimization, energy management, public safety',
+      ],
+    },
+    {
+      day: 'Day 6',
+      date: 'Oct 10, 2026',
+      title: 'Responsible AI, Ethics & Capstone Project',
+      description: 'Concluding session on ethical AI practices, followed by capstone project presentations and the certification examination.',
+      topics: [
+        'AI bias, fairness, and transparency — principles and tools',
+        'Data privacy, governance, and regulatory frameworks',
+        'Capstone project presentations and peer evaluation',
+        'Certification examination (minimum 80% attendance required)',
+      ],
+    },
   ];
 
   return (
@@ -341,13 +407,29 @@ function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {scheduleData.map((s, i) => (
-                <div key={i} className="bg-white border border-gray-200 shadow-sm rounded-2xl p-8 hover:shadow-lg transition-all relative overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-1.5 h-full bg-[#1e3a5f] group-hover:bg-[#8B1A1A] transition-colors" />
-                  <div className="flex justify-between items-center mb-6">
-                    <h4 className="font-bold text-[#8B1A1A] text-xl uppercase tracking-wider">{s.day}</h4>
-                    <span className="text-sm font-semibold text-[#1e3a5f] bg-blue-50 px-4 py-1.5 rounded-full">{s.date}</span>
+                <div key={i} className="bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition-all relative group flex flex-col">
+                  {/* Colored top bar */}
+                  <div className="h-1.5 w-full bg-[#1e3a5f] group-hover:bg-[#8B1A1A] transition-colors" />
+                  <div className="p-8 flex flex-col flex-1">
+                    {/* Day badge + date */}
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="bg-[#8B1A1A] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">{s.day}</span>
+                      <span className="text-sm font-semibold text-[#1e3a5f] bg-blue-50 px-4 py-1.5 rounded-full">{s.date}</span>
+                    </div>
+                    {/* Title */}
+                    <h4 className="font-serif text-lg md:text-xl text-[#1a2744] font-bold leading-snug mb-3">{s.title}</h4>
+                    {/* Description */}
+                    <p className="text-gray-500 text-sm leading-relaxed mb-5">{s.description}</p>
+                    {/* Topics */}
+                    <ul className="space-y-2 mt-auto">
+                      {s.topics.map((topic, j) => (
+                        <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#D4870A] shrink-0" />
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="font-serif text-xl md:text-2xl text-[#1a2744] font-semibold leading-snug">{s.title}</p>
                 </div>
               ))}
             </div>
