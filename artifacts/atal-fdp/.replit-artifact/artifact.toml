@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "AICTE-ATAL FDP Website"
+version = "1.0.0"
+id = "artifacts/atal-fdp"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22226
+
+[services.development]
+run = "pnpm --filter @workspace/atal-fdp run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/atal-fdp", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/atal-fdp/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22226"
+BASE_PATH = "/"
