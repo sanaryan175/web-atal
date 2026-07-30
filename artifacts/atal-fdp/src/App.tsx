@@ -12,11 +12,11 @@ import {
 
 // --- LOGO IMPORTS ---
 import aicteLogo from '@assets/aicte_logo_1784650128753.png';
-import pictLogo from '@assets/pict_logo_1784650156382.jpg';
+import pictLogo from '@assets/pict_logo_1784650156382.png';
 import atalLogo from '@assets/atal_logo_1784650128753.png';
 
 // --- BROCHURE PDF ---
-import brochureUrl from '@assets/ATAL_FDP_Brochure_1784650732622.pdf?url';
+import brochureUrl from '@assets/ATAL FDP Brochure-1.pdf?url';
 
 
 function Home() {
@@ -65,77 +65,100 @@ function Home() {
     { id: 'contact', label: 'Contact' },
   ];
 
-  const scheduleData = [
+  const [selectedDay, setSelectedDay] = React.useState(0);
+
+  type SlotKind = 'session' | 'special' | 'activity' | 'lunch' | 'hands-on' | 'assessment';
+  interface Slot {
+    time: string;
+    kind: SlotKind;
+    label?: string;
+    sessionNo?: number;
+    topic?: string;
+    expert?: string;
+    designation?: string;
+    experience?: string;
+  }
+  interface DaySchedule { day: string; date: string; slots: Slot[]; }
+
+  const scheduleData: DaySchedule[] = [
     {
-      day: 'Day 1',
-      date: 'Oct 5, 2026',
-      title: 'Introduction to Applied AI & Generative AI Fundamentals',
-      description: 'Kickoff session covering the current AI landscape and the rise of Generative AI — from foundational concepts to hands-on exploration of modern tools.',
-      topics: [
-        'Overview of the AI/ML ecosystem and emerging trends',
-        'Generative AI concepts: architectures, capabilities, and limitations',
-        'Prompt engineering basics — crafting effective instructions',
-        'Hands-on: ChatGPT, Google Gemini, and GitHub Copilot',
+      day: 'Day 1', date: 'Oct 5, 2026',
+      slots: [
+        { time: '9:00 AM – 9:30 AM', kind: 'special', label: 'Inaugural Session' },
+        { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 1,
+          topic: 'Introduction to Applied AI and Current Landscape',
+          expert: 'Dr. Bhushan Garvare', designation: 'AI Consultant at Google', experience: '15 years' },
+        { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 2,
+          topic: 'Emerging Trends in AI',
+          expert: 'Dr. Bhushan Garvare', designation: 'AI Consultant at Google', experience: '15 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Generative AI – Text Generation' },
       ],
     },
     {
-      day: 'Day 2',
-      date: 'Oct 6, 2026',
-      title: 'Computer Vision — Concepts, Tools & Applications',
-      description: 'Deep dive into Computer Vision from pixel-level image processing to deploying real-world object detection and recognition systems.',
-      topics: [
-        'Image processing fundamentals with OpenCV',
-        'Convolutional Neural Networks (CNNs) and transfer learning',
-        'Object detection with YOLO — hands-on lab',
-        'Real-world CV applications: medical imaging, surveillance, agriculture',
+      day: 'Day 2', date: 'Oct 6, 2026',
+      slots: [
+        { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 3,
+          topic: 'Agentic AI and Intelligent Systems',
+          expert: 'Mr. Amol Ujgare', designation: 'Founder of an AI Training Institute', experience: '10 years' },
+        { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 4,
+          topic: 'Multimodal AI Applications',
+          expert: 'Mr. Amol Ujgare', designation: 'Founder of an AI Training Institute', experience: '10 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build a Simple AI Agent' },
       ],
     },
     {
-      day: 'Day 3',
-      date: 'Oct 7, 2026',
-      title: 'Data Science Pipelines & Predictive Modeling',
-      description: 'End-to-end data science workflow — from raw data to production-ready predictive models using industry-standard frameworks.',
-      topics: [
-        'Data preprocessing, cleaning, and feature engineering',
-        'Supervised and unsupervised ML algorithms',
-        'Model building with Scikit-learn, Pandas, and Matplotlib',
-        'Model evaluation, validation, and performance metrics',
+      day: 'Day 3', date: 'Oct 7, 2026',
+      slots: [
+        { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 5,
+          topic: 'Digital Twin Development for Safety Critical Systems',
+          expert: 'Dr. Lalit Singh', designation: 'Nuclear Scientist, BARC', experience: '24 years' },
+        { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 6,
+          topic: 'Applied AI for Societal Applications',
+          expert: 'Dr. Girish Pashlikar', designation: 'Industry Expert', experience: '33 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build an AI Model' },
       ],
     },
     {
-      day: 'Day 4',
-      date: 'Oct 8, 2026',
-      title: 'Large Language Models & Agentic AI Systems',
-      description: 'Explore the architecture behind LLMs and build AI agents capable of reasoning, planning, and using external tools autonomously.',
-      topics: [
-        'LLM architecture: transformers, attention, and fine-tuning',
-        'Retrieval-Augmented Generation (RAG) systems',
-        'Building AI agents with LangChain and tool-use frameworks',
-        'Agentic workflows: multi-step reasoning and automation',
+      day: 'Day 4', date: 'Oct 8, 2026',
+      slots: [
+        { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 7,
+          topic: 'AI Model Deployment: Enterprise Document Intelligence with GenAI',
+          expert: 'Mr. Yogesh Saraf', designation: 'Tech Mahindra', experience: '30 years' },
+        { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 8,
+          topic: 'Ethical AI and Responsible Innovation',
+          expert: 'Dr. Preeti Mulay', designation: 'Industry Expert', experience: '28 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build a Recommendation System' },
       ],
     },
     {
-      day: 'Day 5',
-      date: 'Oct 9, 2026',
-      title: 'Real-World AI Applications',
-      description: 'Bridging theory and practice — hands-on case studies showing how AI is transforming healthcare, education, agriculture, and smart city infrastructure.',
-      topics: [
-        'AI in Healthcare: diagnostics, medical imaging, drug discovery',
-        'AI in Education: adaptive learning systems and intelligent tutoring',
-        'AI in Agriculture: crop monitoring, yield prediction, pest detection',
-        'Smart Cities: traffic optimization, energy management, public safety',
+      day: 'Day 5', date: 'Oct 9, 2026',
+      slots: [
+        { time: '9:30 AM – 12:00 PM', kind: 'special', label: 'Industrial Visit' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 9,
+          topic: 'Machine Learning & Deep Learning in Practice',
+          expert: 'Dr. S. C. Dharmadhikari', designation: 'HOD, AI&DS Dept., PICT', experience: '24 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Research Assistant using AI' },
       ],
     },
     {
-      day: 'Day 6',
-      date: 'Oct 10, 2026',
-      title: 'Responsible AI, Ethics & Capstone Project',
-      description: 'Concluding session on ethical AI practices, followed by capstone project presentations and the certification examination.',
-      topics: [
-        'AI bias, fairness, and transparency — principles and tools',
-        'Data privacy, governance, and regulatory frameworks',
-        'Capstone project presentations and peer evaluation',
-        'Certification examination (minimum 80% attendance required)',
+      day: 'Day 6', date: 'Oct 10, 2026',
+      slots: [
+        { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 10,
+          topic: 'Indian Values / NEP / Research Methodology',
+          expert: 'Dr. S. P. Kallurkar', designation: 'CEO at Level Up Pune', experience: '18 years' },
+        { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
+        { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
+        { time: '2:00 PM – 4:30 PM', kind: 'assessment', label: 'MCQs and Feedback' },
+        { time: '4:00 PM – 5:00 PM', kind: 'special', label: 'Valedictory Session' },
       ],
     },
   ];
@@ -147,9 +170,9 @@ function Home() {
       <header className="bg-white py-8 px-4 md:px-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
           <div className="flex justify-center items-center gap-6 sm:gap-12 md:gap-20 mb-8 w-full px-4">
-            <img src={aicteLogo} alt="AICTE Logo" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" />
-            <img src={pictLogo} alt="PICT Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain" />
-            <img src={atalLogo} alt="ATAL Logo" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain" />
+            <img src={aicteLogo} alt="AICTE Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
+            <img src={pictLogo} alt="PICT Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
+            <img src={atalLogo} alt="ATAL Logo" className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain flex-shrink-0" />
           </div>
           
           <div className="text-center max-w-4xl">
@@ -164,7 +187,7 @@ function Home() {
               Approved by AICTE Government of Maharashtra &nbsp;|&nbsp; Accredited by NAAC (A+) &amp; NBA [All eligible UG Programs]
             </p>
             
-            <p className="text-gray-500 font-bold uppercase tracking-widest text-xs sm:text-sm mb-2">
+            <p className="text-gray-900 font-bold uppercase tracking-widest text-xs sm:text-sm mb-2">
               Department of Artificial Intelligence & Data Science
             </p>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1e3a5f] mt-4 mb-4">
@@ -212,7 +235,7 @@ function Home() {
             </div>
             
             <p className="text-blue-200 font-semibold mb-6 uppercase tracking-[0.2em] text-xs sm:text-sm">
-              6-Day Face-to-Face (Offline) Basic FDP
+              6-Day Offline Basic FDP
             </p>
             
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-white leading-[1.1] mb-12 drop-shadow-md px-4">
@@ -398,39 +421,200 @@ function Home() {
 
         {/* Schedule Section */}
         <section id="schedule" className="py-24 px-4 md:px-8 bg-white border-b border-gray-100">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col items-center mb-6">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">Programme Schedule</h2>
-              <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
+              <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full mb-6"></div>
+              {/* Meta info strip */}
+              <div className="w-full bg-[#1a2744] rounded-xl px-6 py-4 flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm text-white mb-10">
+                <span><span className="text-[#D4870A] font-bold">Thrust Area:</span> Artificial Intelligence &amp; Applications</span>
+                <span><span className="text-[#D4870A] font-bold">Mode:</span> Offline</span>
+                <span><span className="text-[#D4870A] font-bold">Duration:</span> Oct 5 – Oct 10, 2026</span>
+              </div>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {scheduleData.map((s, i) => (
-                <div key={i} className="bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden hover:shadow-lg transition-all relative group flex flex-col">
-                  {/* Colored top bar */}
-                  <div className="h-1.5 w-full bg-[#1e3a5f] group-hover:bg-[#8B1A1A] transition-colors" />
-                  <div className="p-8 flex flex-col flex-1">
-                    {/* Day badge + date */}
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="bg-[#8B1A1A] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">{s.day}</span>
-                      <span className="text-sm font-semibold text-[#1e3a5f] bg-blue-50 px-4 py-1.5 rounded-full">{s.date}</span>
-                    </div>
-                    {/* Title */}
-                    <h4 className="font-serif text-lg md:text-xl text-[#1a2744] font-bold leading-snug mb-3">{s.title}</h4>
-                    {/* Description */}
-                    <p className="text-gray-500 text-sm leading-relaxed mb-5">{s.description}</p>
-                    {/* Topics */}
-                    <ul className="space-y-2 mt-auto">
-                      {s.topics.map((topic, j) => (
-                        <li key={j} className="flex items-start gap-2 text-sm text-gray-700">
-                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#D4870A] shrink-0" />
-                          {topic}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+
+            {/* Day tabs */}
+            <div className="flex overflow-x-auto gap-2 mb-8 pb-1">
+              {scheduleData.map((d, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelectedDay(i)}
+                  className={`flex-shrink-0 flex flex-col items-center px-5 py-3 rounded-xl border-2 font-bold text-sm transition-all ${
+                    selectedDay === i
+                      ? 'bg-[#1a2744] border-[#1a2744] text-white shadow-md'
+                      : 'bg-white border-gray-200 text-gray-500 hover:border-[#1a2744] hover:text-[#1a2744]'
+                  }`}
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider opacity-70">{d.day}</span>
+                  <span className="text-sm mt-0.5">{d.date}</span>
+                </button>
               ))}
+            </div>
+
+            {/* Timeline for selected day */}
+            <div className="relative hidden sm:block">
+              {/* Continuous vertical line: at 110px (time) + 6px (half dot) = 116px */}
+              <div className="absolute top-0 bottom-0 w-0.5 bg-gray-200" style={{ left: '116px' }} />
+
+              <div className="space-y-0">
+                {scheduleData[selectedDay].slots.map((slot, j) => {
+                  const isSession = slot.kind === 'session';
+                  const isLunch   = slot.kind === 'lunch';
+                  const isHandsOn = slot.kind === 'hands-on';
+                  const isAssess  = slot.kind === 'assessment';
+                  const isSpecial = slot.kind === 'special';
+                  const isActivity = slot.kind === 'activity';
+
+                  const dotColor = isSession ? 'bg-[#1a2744]'
+                    : isHandsOn ? 'bg-[#D4870A]'
+                    : isSpecial ? 'bg-[#8B1A1A]'
+                    : isAssess  ? 'bg-purple-600'
+                    : 'bg-gray-300';
+
+                  return (
+                    <div key={j} className="flex items-start">
+                      {/* Time column */}
+                      <div className="w-[110px] shrink-0 flex flex-col items-end gap-0.5 pt-2.5">
+                        {(() => {
+                          const parts = slot.time.split(' – ');
+                          return (
+                            <>
+                              <span className="text-xs text-gray-500 font-medium leading-tight font-mono tabular-nums">{parts[0]}</span>
+                              <span className="text-xs text-gray-300 font-medium leading-tight font-mono tabular-nums">{parts[1]}</span>
+                            </>
+                          );
+                        })()}
+                      </div>
+
+                      {/* Dot on vertical line */}
+                      <div className="w-3 shrink-0 flex justify-center pt-2">
+                        <span className={`w-3 h-3 rounded-full border-2 border-white shadow ${dotColor} z-10 relative`} />
+                      </div>
+
+                      {/* Card */}
+                      <div className={`flex-1 rounded-xl border px-5 py-4 mb-3 ml-3 ${
+                        isSession  ? 'bg-white border-gray-200 shadow-sm'
+                        : isLunch  ? 'bg-gray-50 border-dashed border-gray-200'
+                        : isHandsOn ? 'bg-amber-50 border-amber-200'
+                        : isSpecial ? 'bg-red-50 border-red-200'
+                        : isAssess  ? 'bg-purple-50 border-purple-200'
+                        : 'bg-blue-50 border-blue-100'
+                      }`}>
+                        {isSession ? (
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#1a2744] px-2.5 py-0.5 rounded-full">
+                                Session {slot.sessionNo}
+                              </span>
+                            </div>
+                            <p className="font-serif font-bold text-[#1a2744] text-base md:text-lg leading-snug mb-3">{slot.topic}</p>
+                            <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-gray-600 border-t border-gray-100 pt-3">
+                              <span><span className="font-semibold text-gray-700">Expert:</span> {slot.expert}</span>
+                              <span><span className="font-semibold text-gray-700">Organisation:</span> {slot.designation}</span>
+                              <span><span className="font-semibold text-gray-700">Experience:</span> {slot.experience}</span>
+                            </div>
+                          </div>
+                        ) : isLunch ? (
+                          <p className="text-gray-400 font-semibold text-sm italic">{slot.label}</p>
+                        ) : isHandsOn ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full shrink-0">Hands-on</span>
+                            <p className="font-semibold text-amber-900 text-sm">{slot.label?.replace('Hands-on: ', '')}</p>
+                          </div>
+                        ) : isAssess ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full shrink-0">Assessment</span>
+                            <p className="font-semibold text-purple-900 text-sm">{slot.label}</p>
+                          </div>
+                        ) : isActivity ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full shrink-0">Activity</span>
+                            <p className="font-semibold text-blue-900 text-sm">{slot.label}</p>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-[#8B1A1A] bg-red-100 px-2.5 py-0.5 rounded-full shrink-0">Special</span>
+                            <p className="font-bold text-[#8B1A1A] text-sm">{slot.label}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Mobile timeline (no horizontal connectors) */}
+            <div className="relative sm:hidden">
+              <div className="space-y-3">
+                {scheduleData[selectedDay].slots.map((slot, j) => {
+                  const isSession = slot.kind === 'session';
+                  const isLunch   = slot.kind === 'lunch';
+                  const isHandsOn = slot.kind === 'hands-on';
+                  const isAssess  = slot.kind === 'assessment';
+                  const isSpecial = slot.kind === 'special';
+                  const isActivity = slot.kind === 'activity';
+
+                  const dotColor = isSession ? 'bg-[#1a2744]'
+                    : isHandsOn ? 'bg-[#D4870A]'
+                    : isSpecial ? 'bg-[#8B1A1A]'
+                    : isAssess  ? 'bg-purple-600'
+                    : 'bg-gray-300';
+
+                  return (
+                    <div key={j}>
+                      {/* Mobile-only time */}
+                      <p className="text-xs text-gray-400 font-medium mb-1">{slot.time}</p>
+                      <div className={`rounded-xl border px-5 py-4 ${
+                        isSession  ? 'bg-white border-gray-200 shadow-sm'
+                        : isLunch  ? 'bg-gray-50 border-dashed border-gray-200'
+                        : isHandsOn ? 'bg-amber-50 border-amber-200'
+                        : isSpecial ? 'bg-red-50 border-red-200'
+                        : isAssess  ? 'bg-purple-50 border-purple-200'
+                        : 'bg-blue-50 border-blue-100'
+                      }`}>
+                        {isSession ? (
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <span className="text-xs font-bold uppercase tracking-wider text-white bg-[#1a2744] px-2.5 py-0.5 rounded-full">
+                                Session {slot.sessionNo}
+                              </span>
+                            </div>
+                            <p className="font-serif font-bold text-[#1a2744] text-base leading-snug mb-3">{slot.topic}</p>
+                            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 border-t border-gray-100 pt-3">
+                              <span><span className="font-semibold text-gray-700">Expert:</span> {slot.expert}</span>
+                              <span><span className="font-semibold text-gray-700">Organisation:</span> {slot.designation}</span>
+                              <span><span className="font-semibold text-gray-700">Experience:</span> {slot.experience}</span>
+                            </div>
+                          </div>
+                        ) : isLunch ? (
+                          <p className="text-gray-400 font-semibold text-sm italic">{slot.label}</p>
+                        ) : isHandsOn ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full shrink-0">Hands-on</span>
+                            <p className="font-semibold text-amber-900 text-sm">{slot.label?.replace('Hands-on: ', '')}</p>
+                          </div>
+                        ) : isAssess ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full shrink-0">Assessment</span>
+                            <p className="font-semibold text-purple-900 text-sm">{slot.label}</p>
+                          </div>
+                        ) : isActivity ? (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-2.5 py-0.5 rounded-full shrink-0">Activity</span>
+                            <p className="font-semibold text-blue-900 text-sm">{slot.label}</p>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-wider text-[#8B1A1A] bg-red-100 px-2.5 py-0.5 rounded-full shrink-0">Special</span>
+                            <p className="font-bold text-[#8B1A1A] text-sm">{slot.label}</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
@@ -519,15 +703,15 @@ function Home() {
                   
                   <div>
                     <h4 className="font-bold text-[#8B1A1A] uppercase tracking-wider text-sm mb-3">Organizing Committee Members</h4>
-                    <p className="text-gray-700 leading-relaxed font-medium">
-                      Ms. A. A. Deshpande <span className="text-gray-300 mx-2">|</span> 
-                      Mrs. M. V. Raut <span className="text-gray-300 mx-2">|</span> 
-                      Mrs. T. S. Mulla <span className="text-gray-300 mx-2">|</span> 
-                      Ms. D. S. Chechani <span className="text-gray-300 mx-2">|</span> 
-                      Mrs. B. S. Kulkarni <span className="text-gray-300 mx-2">|</span> 
-                      Mrs. A. A. Kadam <span className="text-gray-300 mx-2">|</span> 
-                      Mrs. Deepika Kumari
-                    </p>
+                    <ul className="text-gray-800 space-y-2 font-medium">
+                      <li>• Ms. A. A. Deshpande</li>
+                      <li>• Mrs. M. V. Raut</li>
+                      <li>• Mrs. T. S. Mulla</li>
+                      <li>• Ms. D. S. Chechani</li>
+                      <li>• Mrs. B. S. Kulkarni</li>
+                      <li>• Mrs. A. A. Kadam</li>
+                      <li>• Mrs. Deepika Kumari</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -617,7 +801,7 @@ function Home() {
             <img src={pictLogo} alt="PICT Logo" className="w-14 h-14 md:w-16 md:h-16 object-contain" />
             <div>
               <h4 className="font-bold text-lg md:text-xl font-serif">Pune Institute of Computer Technology</h4>
-              <p className="text-gray-400 text-sm mt-1">Department of Artificial Intelligence & Data Science</p>
+              <p className="text-[#D4870A] font-bold text-sm mt-1">Department of Artificial Intelligence & Data Science</p>
             </div>
           </div>
           
