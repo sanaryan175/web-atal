@@ -169,15 +169,15 @@ function Home() {
       {/* Header Section */}
       <header className="bg-white py-8 px-4 md:px-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col items-center">
-          <div className="flex justify-center items-center gap-6 sm:gap-12 md:gap-20 mb-8 w-full px-4">
-            <img src={aicteLogo} alt="AICTE Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
-            <img src={pictLogo} alt="PICT Logo" className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
-            <img src={atalLogo} alt="ATAL Logo" className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain flex-shrink-0" />
+          <div className="flex justify-center items-center gap-3 xs:gap-4 sm:gap-12 md:gap-20 mb-8 w-full px-4">
+            <img src={aicteLogo} alt="AICTE Logo" className="w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
+            <img src={pictLogo} alt="PICT Logo" className="w-16 h-16 xs:w-20 xs:h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 object-contain flex-shrink-0" />
+            <img src={atalLogo} alt="ATAL Logo" className="w-20 h-20 xs:w-24 xs:h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 object-contain flex-shrink-0" />
           </div>
           
           <div className="text-center max-w-4xl">
             <h2 className="text-[#8B1A1A] font-bold text-xs sm:text-sm tracking-widest uppercase mb-2">Society for Computer Technology & Research's</h2>
-            <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-[#1a2744] leading-tight mb-2">
+            <h1 className="font-serif text-[1.4rem] sm:text-4xl md:text-5xl font-bold text-[#1a2744] leading-tight mb-2 text-balance">
               Pune Institute of Computer Technology
             </h1>
             <p className="text-xs sm:text-sm text-gray-600 mb-1 font-medium">
@@ -190,7 +190,7 @@ function Home() {
             <p className="text-gray-900 font-bold uppercase tracking-widest text-xs sm:text-sm mb-2">
               Department of Artificial Intelligence & Data Science
             </p>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#1e3a5f] mt-4 mb-4">
+            <h2 className="font-serif text-[2rem] sm:text-5xl font-bold text-[#1e3a5f] mt-4 mb-4 text-balance">
               AICTE-ATAL FDP
             </h2>
             <p className="text-[#8B1A1A] font-bold text-lg sm:text-xl border-b-[3px] border-[#D4870A] inline-block pb-1 px-4 mb-2">
@@ -222,7 +222,7 @@ function Home() {
       <main className="flex-1 flex flex-col">
         
         {/* Hero Section */}
-        <section className="bg-[#1e3a5f] text-white pt-20 flex flex-col items-center relative overflow-hidden">
+        <section className="bg-[#1e3a5f] text-white pt-14 sm:pt-20 flex flex-col items-center relative overflow-hidden">
           {/* Subtle overlay gradients for depth */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
             <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-gradient-to-br from-blue-400 to-transparent blur-3xl" />
@@ -238,7 +238,7 @@ function Home() {
               6-Day Offline Basic FDP
             </p>
             
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-white leading-[1.1] mb-12 drop-shadow-md px-4">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-white leading-[1.1] mb-8 sm:mb-12 drop-shadow-md px-4 text-balance">
               Applied AI: Emerging Trends, Tools, and Societal Applications
             </h1>
             
@@ -253,7 +253,7 @@ function Home() {
           </div>
           
           {/* Stats Strip */}
-          <div className="w-full bg-[#15233d] border-t border-white/10 mt-20 relative z-10">
+          <div className="w-full bg-[#15233d] border-t border-white/10 mt-12 sm:mt-20 relative z-10">
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10 text-sm">
               <div className="p-6 sm:p-8 flex flex-col gap-1 items-center lg:items-start text-center lg:text-left">
                 <span className="text-white/60 font-semibold tracking-wider text-xs">DURATION</span>
@@ -272,10 +272,10 @@ function Home() {
         </section>
         
         {/* About Section */}
-        <section id="about" className="py-24 px-4 md:px-8 bg-white border-b border-gray-100">
+        <section id="about" className="py-16 sm:py-24 px-4 md:px-8 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-16">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">About the Programme</h2>
+            <div className="flex flex-col items-center mb-10 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">About the Programme</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
             </div>
 
@@ -345,10 +345,10 @@ function Home() {
         </section>
 
         {/* Objectives Section */}
-        <section id="objectives" className="py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
+        <section id="objectives" className="py-16 sm:py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-16">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">Objectives & Outcomes</h2>
+            <div className="flex flex-col items-center mb-10 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Objectives & Outcomes</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
             </div>
             
@@ -420,10 +420,10 @@ function Home() {
         </section>
 
         {/* Schedule Section */}
-        <section id="schedule" className="py-24 px-4 md:px-8 bg-white border-b border-gray-100">
+        <section id="schedule" className="py-16 sm:py-24 px-4 md:px-8 bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center mb-6">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">Programme Schedule</h2>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Programme Schedule</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full mb-6"></div>
               {/* Meta info strip */}
               <div className="w-full bg-[#1a2744] rounded-xl px-6 py-4 flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm text-white mb-10">
@@ -620,10 +620,10 @@ function Home() {
         </section>
 
         {/* Registration Section */}
-        <section id="registration" className="py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
+        <section id="registration" className="py-16 sm:py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-16">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">Registration & Guidelines</h2>
+            <div className="flex flex-col items-center mb-10 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Registration & Guidelines</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
             </div>
             
@@ -720,10 +720,10 @@ function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-24 px-4 md:px-8 bg-white">
+        <section id="contact" className="py-16 sm:py-24 px-4 md:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-16">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4">Contact & Venue</h2>
+            <div className="flex flex-col items-center mb-10 sm:mb-16">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Contact & Venue</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
             </div>
             
