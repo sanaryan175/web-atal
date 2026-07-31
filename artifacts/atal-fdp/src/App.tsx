@@ -52,7 +52,7 @@ function Home() {
     const el = document.getElementById(id);
     if (el) {
       // Offset for the sticky header
-      const y = el.getBoundingClientRect().top + window.scrollY - 60;
+      const y = el.getBoundingClientRect().top + window.scrollY - 96;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
@@ -202,12 +202,12 @@ function Home() {
 
       {/* Sticky Navigation Bar */}
       <nav className="sticky top-0 z-50 bg-[#1a2744] shadow-md border-b border-blue-900/50 w-full">
-        <div className="max-w-7xl mx-auto flex items-center overflow-x-auto hide-scrollbar px-1 sm:px-2">
+        <div className="max-w-7xl mx-auto flex flex-wrap sm:flex-nowrap items-center overflow-x-auto sm:overflow-visible hide-scrollbar px-1 sm:px-2">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className={`whitespace-nowrap shrink-0 sm:flex-1 px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors border-b-2 ${
+              className={`whitespace-nowrap w-1/3 sm:w-auto sm:flex-1 px-2 sm:px-3 md:px-6 py-3 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors border-b-2 ${
                 activeSection === link.id
                   ? 'bg-[#8B1A1A] text-white border-[#8B1A1A]'
                   : 'text-gray-300 hover:text-white hover:bg-white/5 border-transparent'
@@ -272,7 +272,7 @@ function Home() {
         </section>
         
         {/* About Section */}
-        <section id="about" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white border-b border-gray-100">
+        <section id="about" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-24 sm:scroll-mt-20 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">About the Programme</h2>
@@ -345,7 +345,7 @@ function Home() {
         </section>
 
         {/* Objectives Section */}
-        <section id="objectives" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
+        <section id="objectives" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-24 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Objectives & Outcomes</h2>
@@ -420,7 +420,7 @@ function Home() {
         </section>
 
         {/* Schedule Section */}
-        <section id="schedule" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white border-b border-gray-100">
+        <section id="schedule" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-24 sm:scroll-mt-20 bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center mb-6">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Programme Schedule</h2>
@@ -620,7 +620,7 @@ function Home() {
         </section>
 
         {/* Registration Section */}
-        <section id="registration" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
+        <section id="registration" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-24 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Registration & Guidelines</h2>
@@ -720,7 +720,7 @@ function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white">
+        <section id="contact" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-24 sm:scroll-mt-20 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Contact & Venue</h2>
@@ -807,10 +807,10 @@ function Home() {
           
           <div className="text-center md:text-right">
             <p className="text-sm text-gray-400 mb-4">&copy; {new Date().getFullYear()} PICT. All rights reserved.</p>
-            <div className="flex gap-6 justify-center md:justify-end text-sm font-medium text-gray-300">
-              <button onClick={() => scrollTo('about')} className="hover:text-white transition-colors">About</button>
-              <button onClick={() => scrollTo('schedule')} className="hover:text-white transition-colors">Schedule</button>
-              <button onClick={() => scrollTo('registration')} className="hover:text-white transition-colors">Registration</button>
+            <div className="flex flex-wrap gap-x-6 gap-y-1 justify-center md:justify-end text-sm font-medium text-gray-300">
+              <button onClick={() => scrollTo('about')} className="py-2.5 hover:text-white transition-colors">About</button>
+              <button onClick={() => scrollTo('schedule')} className="py-2.5 hover:text-white transition-colors">Schedule</button>
+              <button onClick={() => scrollTo('registration')} className="py-2.5 hover:text-white transition-colors">Registration</button>
             </div>
           </div>
         </div>
