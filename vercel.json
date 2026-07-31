@@ -1,6 +1,5 @@
 {
-  "version": 2,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm -C artifacts/atal-fdp run build",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm --filter @workspace/atal-fdp run build",
   "outputDirectory": "artifacts/atal-fdp/dist/public"
 }
