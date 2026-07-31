@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: .
+    container_name: web-brochure
+    ports:
+      - "5173:5173"
+    environment:
+      NODE_ENV: development
