@@ -202,12 +202,12 @@ function Home() {
 
       {/* Sticky Navigation Bar */}
       <nav className="sticky top-0 z-50 bg-[#1a2744] shadow-md border-b border-blue-900/50 w-full">
-        <div className="max-w-7xl mx-auto flex items-center overflow-x-auto hide-scrollbar">
+        <div className="max-w-7xl mx-auto flex items-center overflow-x-auto hide-scrollbar px-1 sm:px-2">
           {navLinks.map((link) => (
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className={`whitespace-nowrap px-6 py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors border-b-2 flex-1 ${
+              className={`whitespace-nowrap shrink-0 sm:flex-1 px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold uppercase tracking-wider transition-colors border-b-2 ${
                 activeSection === link.id
                   ? 'bg-[#8B1A1A] text-white border-[#8B1A1A]'
                   : 'text-gray-300 hover:text-white hover:bg-white/5 border-transparent'
@@ -272,7 +272,7 @@ function Home() {
         </section>
         
         {/* About Section */}
-        <section id="about" className="py-16 sm:py-24 px-4 md:px-8 bg-white border-b border-gray-100">
+        <section id="about" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">About the Programme</h2>
@@ -285,7 +285,7 @@ function Home() {
                 <div>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">About PICT</h3>
                   <div className="w-16 h-1 bg-[#D4870A] mb-6"></div>
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-gray-700 leading-relaxed text-left md:text-justify">
                     Pune Institute of Computer Technology (PICT) is an elite academic Institute located in Pune, "The Oxford of the East." Since its establishment in 1983, PICT has been revolutionizing the education sector by nurturing skilled and industry-ready engineers. PICT believes in value-based quality education in Information and Communication Technology (ICT). PICT constantly endeavours to achieve higher levels of technical ingenuity through undergraduate (UG) programmes in CE, E&TE, IT, ECE, and AI&DS. Postgraduate (PG) programmes in Computer Engineering, Data Science, Electronics & Communication (Wireless Communication Technology), and Information Technology promote a high-quality research environment in emerging technological domains.
                   </p>
                 </div>
@@ -293,7 +293,7 @@ function Home() {
                 <div>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">About AI&DS Department</h3>
                   <div className="w-16 h-1 bg-[#D4870A] mb-6"></div>
-                  <p className="text-gray-700 leading-relaxed text-justify">
+                  <p className="text-gray-700 leading-relaxed text-left md:text-justify">
                     The Bachelor Degree Programme in Artificial Intelligence & Data Science (AI & DS) started in the academic year 2023-2024 with an intake capacity of 60. The department of AI & DS has been established with the vision to impart and strengthen core as well as technological knowledge base in all dimensions of this emerging area. Bridging computing fundamentals with emerging technologies, the department ensures professional excellence through interactive workshops and practical application. This experimental methodology builds industry-relevant skills, empowering graduates to lead as AI-integrated professionals in any modern sector.
                   </p>
                 </div>
@@ -304,7 +304,7 @@ function Home() {
                 <div className="bg-blue-50/70 p-8 md:p-10 rounded-2xl border border-blue-100 h-full flex flex-col">
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#1e3a5f] mb-4">Preamble</h3>
                   <div className="w-16 h-1 bg-[#8B1A1A] mb-6"></div>
-                  <p className="text-gray-700 leading-relaxed text-justify flex-1">
+                  <p className="text-gray-700 leading-relaxed text-left md:text-justify flex-1">
                     The Faculty Development Programme (FDP) on Applied Artificial Intelligence aims to equip educators, researchers, and industry professionals with practical insights into the rapidly evolving landscape of AI/ML tools. This program addresses the need to enhance knowledge regarding AI-driven problem-solving techniques, data preprocessing, and modeling. By focusing on hands-on applications — including Computer Vision, Data Science, and Predictive Analysis.
                   </p>
                 </div>
@@ -345,14 +345,14 @@ function Home() {
         </section>
 
         {/* Objectives Section */}
-        <section id="objectives" className="py-16 sm:py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
+        <section id="objectives" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Objectives & Outcomes</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full"></div>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8 items-stretch">
+            <div className="grid lg:grid-cols-3 gap-8 items-stretch">
               {/* Block 1 */}
               <div className="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
                 <div className="w-14 h-14 bg-blue-50 text-[#1e3a5f] rounded-xl flex items-center justify-center mb-6">
@@ -420,13 +420,13 @@ function Home() {
         </section>
 
         {/* Schedule Section */}
-        <section id="schedule" className="py-16 sm:py-24 px-4 md:px-8 bg-white border-b border-gray-100">
+        <section id="schedule" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center mb-6">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Programme Schedule</h2>
               <div className="w-24 h-1.5 bg-[#8B1A1A] rounded-full mb-6"></div>
               {/* Meta info strip */}
-              <div className="w-full bg-[#1a2744] rounded-xl px-6 py-4 flex flex-wrap justify-center gap-x-10 gap-y-2 text-sm text-white mb-10">
+              <div className="w-full bg-[#1a2744] rounded-xl px-5 sm:px-6 py-4 flex flex-wrap justify-center gap-x-6 sm:gap-x-10 gap-y-2 text-sm text-white mb-10">
                 <span><span className="text-[#D4870A] font-bold">Thrust Area:</span> Artificial Intelligence &amp; Applications</span>
                 <span><span className="text-[#D4870A] font-bold">Mode:</span> Offline</span>
                 <span><span className="text-[#D4870A] font-bold">Duration:</span> Oct 5 – Oct 10, 2026</span>
@@ -620,7 +620,7 @@ function Home() {
         </section>
 
         {/* Registration Section */}
-        <section id="registration" className="py-16 sm:py-24 px-4 md:px-8 bg-gray-50 border-b border-gray-100">
+        <section id="registration" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-gray-50 border-b border-gray-100">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Registration & Guidelines</h2>
@@ -720,7 +720,7 @@ function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-16 sm:py-24 px-4 md:px-8 bg-white">
+        <section id="contact" className="py-16 sm:py-24 px-4 md:px-8 scroll-mt-16 sm:scroll-mt-20 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col items-center mb-10 sm:mb-16">
               <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#1a2744] text-center mb-4 text-balance">Contact & Venue</h2>
@@ -737,10 +737,10 @@ function Home() {
                   <h4 className="font-bold text-xl text-[#1a2744] mb-1">Ms. Deepa Mane</h4>
                   <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Coordinator</p>
                   <div className="space-y-4 text-gray-700">
-                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer">
+                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Phone className="w-5 h-5 text-[#8B1A1A]"/> 8149122625
                     </p>
-                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer">
+                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Mail className="w-5 h-5 text-[#8B1A1A]"/> dbmane@pict.edu
                     </p>
                   </div>
@@ -754,10 +754,10 @@ function Home() {
                   <h4 className="font-bold text-xl text-[#1a2744] mb-1">Ms. Anjali Deshpande</h4>
                   <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Co-Coordinator</p>
                   <div className="space-y-4 text-gray-700">
-                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer">
+                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Phone className="w-5 h-5 text-[#8B1A1A]"/> 8379814795
                     </p>
-                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer">
+                    <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Mail className="w-5 h-5 text-[#8B1A1A]"/> aadeshpande@pict.edu
                     </p>
                   </div>
