@@ -285,9 +285,9 @@ function Home() {
                 <div>
                   <h3 className="font-serif text-2xl md:text-3xl font-bold text-[#1a2744] mb-4">About PICT</h3>
                   <div className="w-16 h-1 bg-[#D4870A] mb-6"></div>
-                  <p className="text-gray-700 leading-relaxed text-left md:text-justify">
-                    Pune Institute of Computer Technology (PICT) is an elite academic Institute located in Pune, "The Oxford of the East." Since its establishment in 1983, PICT has been revolutionizing the education sector by nurturing skilled and industry-ready engineers. PICT believes in value-based quality education in Information and Communication Technology (ICT). PICT constantly endeavours to achieve higher levels of technical ingenuity through undergraduate (UG) programmes in CE, E&TE, IT, ECE, and AI&DS. Postgraduate (PG) programmes in Computer Engineering, Data Science, Electronics & Communication (Wireless Communication Technology), and Information Technology promote a high-quality research environment in emerging technological domains.
-                  </p>
+                   <p className="text-gray-700 leading-relaxed text-left md:text-justify">
+                    Pune Institute of Computer Technology (PICT) is an elite academic institute located in Pune, "The Oxford of the East." Since its establishment in 1983, PICT has been revolutionizing the education sector by nurturing skilled and industry-ready engineers. PICT is committed to providing value-based, quality education in Information and Communication Technology (ICT). The institute continually strives to achieve higher levels of technical excellence through its undergraduate (UG) programmes in Computer Engineering (CE), Electronics & Telecommunication Engineering (E&TE), Information Technology (IT), Electronics and Computer Engineering (ECE), and Artificial Intelligence & Data Science (AI&DS). Its postgraduate (PG) programmes in Computer Engineering, Data Science and Electronics & Communication (Wireless Communication Technology) foster a high-quality research environment and encourage innovation in emerging technological domains.
+                   </p>
                 </div>
                 
                 <div>
