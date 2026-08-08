@@ -752,7 +752,6 @@ function Home() {
                     <User className="w-6 h-6" />
                   </div>
                    <h4 className="font-bold text-xl text-[#1a2744] mb-1">Ms. Anjali Deshpande</h4>
-                   <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Coordinator</p>
                   <div className="space-y-4 text-gray-700">
                     <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Phone className="w-5 h-5 text-[#8B1A1A]"/> 8379814795
