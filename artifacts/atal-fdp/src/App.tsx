@@ -16,7 +16,7 @@ import pictLogo from '@assets/pict_logo_1784650156382.png';
 import atalLogo from '@assets/atal_logo_1784650128753.png';
 
 // --- BROCHURE PDF ---
-import brochureUrl from '@assets/ATAL FDP Brochure-1.pdf?url';
+import brochureUrl from '@assets/Final Atal FDP Brochure.pdf?url';
 
 
 function Home() {
@@ -87,12 +87,12 @@ function Home() {
         { time: '9:00 AM – 9:30 AM', kind: 'special', label: 'Inaugural Session' },
         { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 1,
           topic: 'Introduction to Applied AI and Current Landscape',
-          expert: 'Dr. Bhushan Garvare', designation: 'AI Consultant at Google', experience: '15 years' },
+          expert: 'Dr. Bhushan Garware', designation: 'AI Consultant at Google', experience: '15 years' },
         { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 2,
           topic: 'Emerging Trends in AI',
-          expert: 'Dr. Bhushan Garvare', designation: 'AI Consultant at Google', experience: '15 years' },
+          expert: 'Dr. Bhushan Garware', designation: 'AI Consultant at Google', experience: '15 years' },
         { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Generative AI – Text Generation' },
       ],
     },
@@ -101,12 +101,12 @@ function Home() {
       slots: [
         { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 3,
           topic: 'Agentic AI and Intelligent Systems',
-          expert: 'Mr. Amol Ujgare', designation: 'Founder of an AI Training Institute', experience: '10 years' },
+          expert: 'Mr. Amol Ujagare', designation: 'Founder & Lead Trainer, AI Training Institute', experience: '10 years' },
         { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 4,
           topic: 'Multimodal AI Applications',
-          expert: 'Mr. Amol Ujgare', designation: 'Founder of an AI Training Institute', experience: '10 years' },
+          expert: 'Mr. Amol Ujagare', designation: 'Founder & Lead Trainer, AI Training Institute', experience: '10 years' },
         { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build a Simple AI Agent' },
       ],
     },
@@ -114,13 +114,13 @@ function Home() {
       day: 'Day 3', date: 'Oct 7, 2026',
       slots: [
         { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 5,
-          topic: 'Digital Twin Development for Safety Critical Systems',
-          expert: 'Dr. Lalit Singh', designation: 'Nuclear Scientist, BARC', experience: '24 years' },
+          topic: 'Digital Twin Development for Safety-Critical Systems',
+          expert: 'Dr. Lalit Singh', designation: 'Nuclear Scientist, NPCIL (BARC)', experience: '24 years' },
         { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 6,
-          topic: 'Applied AI for Societal Applications',
-          expert: 'Dr. Girish Pashlikar', designation: 'Industry Expert', experience: '33 years' },
+          topic: 'Applied AI for Societal Application',
+          expert: 'Dr. Girish Palshikar', designation: 'Industry Expert', experience: '33 years' },
         { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build an AI Model' },
       ],
     },
@@ -128,24 +128,24 @@ function Home() {
       day: 'Day 4', date: 'Oct 8, 2026',
       slots: [
         { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 7,
-          topic: 'AI Model Deployment: Enterprise Document Intelligence with GenAI',
-          expert: 'Mr. Yogesh Saraf', designation: 'Tech Mahindra', experience: '30 years' },
+          topic: 'AI Model Deployment: Enterprise Document Intelligence with Gen AI',
+          expert: 'Mr. Yogesh Saraf', designation: 'Associate Vice President & Regional Commercial Head – Tech Mahindra', experience: '30 years' },
         { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 8,
           topic: 'Ethical AI and Responsible Innovation',
-          expert: 'Dr. Preeti Mulay', designation: 'Industry Expert', experience: '28 years' },
-        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build a Recommendation System' },
+          expert: 'Dr. Preeti Mulay', designation: 'Founder, Weekend Forever', experience: '28 years' },
+        { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Build a Recommender' },
       ],
     },
     {
       day: 'Day 5', date: 'Oct 9, 2026',
       slots: [
-        { time: '9:30 AM – 12:00 PM', kind: 'special', label: 'Industrial Visit' },
+        { time: '9:30 AM – 12:00 PM', kind: 'special', label: 'Industrial Visit – C-DAC AIRAWAT' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'session', sessionNo: 9,
           topic: 'Machine Learning & Deep Learning in Practice',
-          expert: 'Dr. S. C. Dharmadhikari', designation: 'HOD, AI&DS Dept., PICT', experience: '24 years' },
+          expert: 'Dr. S. C. Dharmadhikari', designation: 'HOD, AI&DS Department, PICT', experience: '24 years' },
         { time: '4:30 PM – 5:30 PM', kind: 'hands-on', label: 'Hands-on: Research Assistant using AI' },
       ],
     },
@@ -154,7 +154,7 @@ function Home() {
       slots: [
         { time: '9:30 AM – 12:00 PM', kind: 'session', sessionNo: 10,
           topic: 'Indian Values / NEP / Research Methodology',
-          expert: 'Dr. S. P. Kallurkar', designation: 'CEO at Level Up Pune', experience: '18 years' },
+          expert: 'Dr. S. P. Kallurkar', designation: 'Chief Executive Officer at Level Up Pune', experience: '18 years' },
         { time: '12:00 PM – 1:00 PM', kind: 'activity', label: 'Article Summary' },
         { time: '1:00 PM – 2:00 PM', kind: 'lunch', label: 'Lunch Break' },
         { time: '2:00 PM – 4:30 PM', kind: 'assessment', label: 'MCQs and Feedback' },
@@ -751,8 +751,8 @@ function Home() {
                   <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#1e3a5f] shadow-sm mb-6 border border-gray-100">
                     <User className="w-6 h-6" />
                   </div>
-                  <h4 className="font-bold text-xl text-[#1a2744] mb-1">Ms. Anjali Deshpande</h4>
-                  <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Co-Coordinator</p>
+                   <h4 className="font-bold text-xl text-[#1a2744] mb-1">Ms. Anjali Deshpande</h4>
+                   <p className="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Coordinator</p>
                   <div className="space-y-4 text-gray-700">
                     <p className="flex items-center gap-3 font-medium hover:text-[#8B1A1A] transition-colors cursor-pointer min-w-0 [overflow-wrap:anywhere]">
                       <Phone className="w-5 h-5 text-[#8B1A1A]"/> 8379814795
